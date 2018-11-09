@@ -1,8 +1,0 @@
-```
-myList = []
-for data in range(5) : 
-    myList.append(data)
-newMyList = sorted(myList, reverse=True)
-print(myList)
-print(newMyList)
-```
