@@ -1,0 +1,36 @@
+<!--http://127.0.0.1:5500/step01_var.html-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var person = "이영자",
+            carName = "Volvo",
+            price = 200;
+        </script>
+        <body>
+            <h1 id="demo">안녕</h1>
+            <button onclick="myfun()">Try it</button>
+            <script>
+                alert(price);
+                function myfun(){
+                    document.getElementById("demo").innerHTML=carName;
+                    var x = document.createElement("FORM");
+                    x.setAttribute("id", "myForm");
+                    document.body.appendChild(x);
+
+                    var y = document.createElement("INPUT")
+                    y.setAttribute("type", "text");
+                    y.setAttribute("value", "이해인");
+                    document.getElementById("myForm").appendChild(y);
+                }
+                document.write("<br><hr>");
+                function myfun2(v){
+                    document.write(v + "<br>");
+                }
+                myfun2("45" + " " + "문자열 출력")
+            </script>
+            
+        </body>
+    </head>
+</html>

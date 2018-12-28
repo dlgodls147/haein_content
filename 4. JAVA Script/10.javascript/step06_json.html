@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript JSON</h2>
+
+<div id="viewOne"></div>
+<br>
+<button onclick="myfun()">버튼</button>
+<br>
+<div>
+    일반 text -> csv -> xml -> JSON 형태 순으로 권장
+</div>
+<b> JSON 형태로 제공시 반드시 key:value는 쌍따옴표 권장 </b><br>
+
+<script>
+    obj1 = {
+        name : '현서'
+    };
+    console.log(obj1.name);
+    console.log(obj1['name']);
+    obj2 = {
+        'name' : '민지'
+    };
+    console.log(obj2.name);
+    console.log(obj2['name']);
+    obj3 = {
+        "name" : "현경"
+    };
+    console.log(obj3.name);
+    console.log(obj3["name"]);
+
+    
+    console.log("--서버에서 받은 데이터라 가정 : 가공(parsing)--")
+    obj4 = "{'name' : '해인'}";
+    // obj4 = JSON.parse(obj4); 에러 발생
+    obj4 = eval('(' + obj4 + ')');
+    console.log(obj4.name);
+    console.log(obj4["name"]);
+    
+    obj5 = '{"name" : "민지"}'; //밖의 따옴표를 단일로 바꿈
+    obj5 = JSON.parse(obj5);
+    console.log(obj5.name);
+    console.log(obj5["name"]);
+</script>
+
+</body>
+</html>
+

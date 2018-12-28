@@ -1,0 +1,29 @@
+<!--http://127.0.0.1:5500/step02_fun.html-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <iframe id="myFrame" src="/default.asp"></iframe>
+        <input type="text" id="one" value="data">
+        <button onclick="nameView()"> 버튼 </button>
+        <button onclick="myFunction()">Try it 1</button>
+        <button onclick="myFunction2()">Try it 2</button>
+        <p id="demo"></p>
+    </body>
+    <script>
+        function nameView(){
+            alert(document.getElementById("one").value)        
+        }
+        function myFunction() {
+            var x = document.getElementsByTagName("HTML")[0].innerHTML;
+            document.getElementById("demo").innerHTML = x;
+        }
+        function myFunction2() {
+            var x = document.getElementById("myFrame").src;
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+</html>

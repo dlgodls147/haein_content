@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset = 'utf-8'>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        // 구글 차트사용선언, 차트 선별 이름 (모듈 구분)
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350],
+          ['2018', 999, 323, 120]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('viewChart'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="viewChart" style="width: 800px; height: 500px;"></div>
+    <div><b># google 차트 라이브러리 사용 선언</b> <br>
+            google.charts.setOnLoadCallback(drawChart); <br>
+            1. 현 소스처럼 http:// 사용 <br>
+            2. 로컬에 다운로드 후 사용 <br><br><br>
+            <b> # google.charts.setOnLoadCallback(drawChart);</b><br>
+            1. 데이터가 응답이 되면 차트 그리는 함수 개발 및 함수 실행 등록<br>
+            2. 응답 완료를 자동 감지하는 기술 <br>
+                : 콜백 함수 등록<br>
+                : 해당 시점이 되면 등록된 함수가 자동 실행되는 기술<br>
+            3. 비동기 기술 적용시에 서버에서 전송되는 데이터 받아서 차트 그리기<br>
+                - 파라미터 값, 즉 데이터는 서버에서 문자열로 전송<br>
+                -> js 객체로 변환( 배열 )및 적용, 배열로만 받을 수 있기때문에<br>
+    </div>
+  </body>
+</html>

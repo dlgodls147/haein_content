@@ -1,0 +1,74 @@
+<!--http://127.0.0.1:5500/step03_type.html-->
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <head>
+        <body>
+            <h2>step03_type.html</h2>
+        </body>
+    </head>
+    <script>
+        console.log("--1. object 생성자--")
+        // 객체 생성
+        var data = new Object();
+        data.name = '현서';
+        data.age = 27;
+        console.log(data.name, data.age);
+        console.log(typeof data); //object
+        console.log("________________________");
+
+        console.log("--2. 객체 리터럴 방식의 객체 생성 --");
+        var person = {
+            name : "해인",
+            age : 27
+        }
+        console.log(person.name, person.age);
+        //이미 존재하는 객체에 새로운 property 생성 가능
+        person.job = "IT 파워맨";
+        console.log(person);
+        console.log(person['job']);
+        
+        //객체가 보유한 속성(property)명만 출력
+        console.log("-- property 값 도출 --");
+        for(key in person){
+            console.log(key)
+            console.log(key, person[key])
+        }
+        
+        console.log("-- property 삭제 --");
+        delete person.age;
+        console.log(person.age); //undefined
+
+        var person2 = {
+        firstName: "John",
+        lastName : "Doe",
+        id       : 5566,
+        getName : function() {
+                return this.firstName + " " + this.lastName;
+  }
+        
+};
+        console.log(person2.getName())
+
+        console.log("-- 구글 차트의 일부 코드 활용--")
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+        console.log(options.hAxis.titleTextStyle.color);
+        console.log(options.vAxis.minValue);
+
+
+        console.log("-- 구글 차트의 배열 데이터 활용--")
+        var data = [
+          ['Year', 'Sales', 'Expenses'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ];
+        console.log(data[4][1])
+    </script>
+</html>
